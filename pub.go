@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-
+ "math/rand"
     "github.com/gomodule/redigo/redis"
 )
 
@@ -15,9 +15,11 @@ func main() {
     defer conn.Close()
 
     // パブリッシュ
-    r, err := redis.Int(conn.Do("PUBLISH", "channel_1", "hello:yangming is"))
+    for{
+    var  k = rand.Intn(100)
+    r, err := redis.Int(conn.Do("PUBLISH", "channel_1",k ))
     if err != nil {
         panic(err)
     }
     fmt.Println(r)
-}
+}}
