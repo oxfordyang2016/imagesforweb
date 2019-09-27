@@ -1,0 +1,7 @@
+regex expre
+
+ba[\x00-\x7F]*.sql support space !
+denote any things in keyborad ,* denote to repeate!
+期货[\u4e00-\u9fa5]*价格 这是针对中文的匹配
+期货[\x00-x\ff]*价格 not support white space
+过程[^]*买入 匹配任意符号
